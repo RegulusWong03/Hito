@@ -1,0 +1,229 @@
+.summary {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #0a0a0f;
+  padding: 6rem 0;
+  overflow: hidden;
+}
+
+.summary-bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: 150%;
+  background-position: 50% 10%;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+  pointer-events: none;
+}
+
+.summary-visible .summary-bg-image {
+  opacity: 1;
+}
+
+.summary-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.summary-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.summary-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+}
+
+.summary-visible .summary-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.summary-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+}
+
+.summary-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.summary-table-wrapper {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  margin-bottom: 4rem;
+}
+
+.summary-visible .summary-table-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary-table th {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-gold);
+  text-align: left;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(201, 169, 78, 0.2);
+}
+
+.summary-table td {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.5s ease;
+}
+
+.summary-visible .summary-table td {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.summary-table tr:last-child td {
+  border-bottom: none;
+}
+
+.summary-table tbody tr:hover td {
+  background: rgba(201, 169, 78, 0.04);
+}
+
+.summary-perspective {
+  color: var(--color-gold);
+  font-weight: 600;
+  white-space: nowrap;
+  width: 30%;
+}
+
+.summary-answer {
+  color: var(--color-text);
+}
+
+.summary-thoughts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease;
+}
+
+.summary-visible .summary-thoughts {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
+}
+
+.summary-thought {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+  padding-left: 1rem;
+  border-left: 2px solid rgba(201, 169, 78, 0.2);
+}
+
+.summary-divider {
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--color-gold);
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.summary-visible .summary-divider {
+  opacity: 0.4;
+  transition-delay: 0.8s;
+}
+
+.summary-question {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.8s ease;
+}
+
+.summary-visible .summary-question {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1s;
+}
+
+.summary-question-text {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.summary-question-sub {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .summary {
+    padding: 4rem 0;
+  }
+
+  .summary-container {
+    padding: 0 1rem;
+  }
+
+  .summary-table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .summary-table th,
+  .summary-table td {
+    padding: 0.75rem 1rem;
+    white-space: nowrap;
+  }
+
+  .summary-perspective {
+    white-space: nowrap;
+  }
+
+  .summary-title {
+    font-size: 1.8rem;
+  }
+}
