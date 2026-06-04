@@ -1,57 +1,39 @@
-# React + TypeScript + Vite
+# 人是什么？—— 一场哲学追问
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 如果一个人没有活着，那他算是人吗？"人"这个词，描述的究竟是一种活着的状态，还是一个超越生死的存在范畴？
 
-Currently, two official plugins are available:
+一个沉浸式的哲学思辨交互页面，将一场关于"人是否描述活着的状态"的多视角讨论，转化为可视化的浏览体验。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 关于
 
-## Expanding the ESLint configuration
+从生物学、日常语言、哲学经典、法律、社会关系、现象学、东方哲学（易经/儒家/庄子）、超人类主义、赛博朋克2077到维特根斯坦 —— 十个视角，十个答案。
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+每一种视角都以独立的章节呈现，配有主题氛围背景图和金句提炼，引导你在滚动中完成一次完整的思想旅程。
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 技术栈
+
+- **框架**: React 18 + TypeScript
+- **构建工具**: Vite
+- **样式**: 纯 CSS + CSS Variables（无 Tailwind / UI 库）
+- **字体**: Playfair Display · Cormorant Garamond · Noto Serif SC
+- **动画**: CSS Animations + Intersection Observer API
+
+## 本地运行
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+浏览器打开 `http://localhost:5173` 即可查看。
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 构建
 
-export default tseslint.config({
-  extends: [
-    // other configs...
-    // Enable lint rules for React
-    reactX.configs['recommended-typescript'],
-    // Enable lint rules for React DOM
-    reactDom.configs.recommended,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm run build
+npm run preview
 ```
+
+## 许可
+
+MIT
